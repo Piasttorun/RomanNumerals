@@ -1,11 +1,11 @@
 Roman number conversation app
-works one way arabic -> roman
-works for symbols involving M upper limit of next roman character.
-to run the code use the _getRoman(int number)_ method and run it.
-Please refer to the decumentation of that method forgit init
-git add .w it works.
 
-The limitation of roman nuerals is MMMCMXCIX - 3,999
+1. works one way, arabic -> roman
+2. works for symbols involving M upper limit of next roman characters.
+3. To run the code use the _getRoman(int number)_ method and run it from the App.main() method.
+4. Please refer to the documentation of that method, which is within the code.
+
+The limitation of roman numerals is MMMCMXCIX - 3,999
 Negative numbers are also not represented.
 
-Code ideas courtesey of Javapoint.
+Code ideas courtesy of Javapoint.
