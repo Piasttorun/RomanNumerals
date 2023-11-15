@@ -11,9 +11,9 @@ public class App {
     }
 
     /**
-     * checks interactively by taking away the number from arabic numerals till it cant anymore
-     * if it can, it will add that number (arabic) to the current roman numeral representation
-     * The inbetween roman values (IV, IX, XC ...) are needed to represent the roman string
+     * Checks iteratively by taking away the arabic numerals from the inputted number utill it can not anymore.
+     * If it can, it will add that roman number at the current iteration to the current roman number representation
+     * The inbetween roman values (IV, IX, XC ...) are needed to represent the roman number representation string
      * This is because is it very hard and inefficient to work out otherwise
      * @param number
      * @return Roman Numeral string
