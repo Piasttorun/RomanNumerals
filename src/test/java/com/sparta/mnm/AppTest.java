@@ -2,43 +2,57 @@ package com.sparta.mnm;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AppTest {
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 4")
-    public void checkIV() {
+    public void checkIV() throws ValueException {
         Assertions.assertEquals("IV",App.getRoman(4));
     }
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 9")
-    public void checkIX() {
+    public void checkIX() throws ValueException {
         Assertions.assertEquals("IX",App.getRoman(9));
     }
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 29")
-    public void checkXXIX() {
+    public void checkXXIX() throws ValueException {
         Assertions.assertEquals("XXIX", App.getRoman(29));
     }
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 80")
-    public void checkLXXX() {
+    public void checkLXXX() throws ValueException {
             Assertions.assertEquals("LXXX", App.getRoman(80));
     }
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 294")
-    public void checkCCXCIV() {
+    public void checkCCXCIV() throws ValueException {
         Assertions.assertEquals("CCXCIV",App.getRoman(294));
     }
 
     @Test
-    @DisplayName("Check if Roman representation is correct for 2019")
-    public void checkMMXIX() {
+    public void checkMMXIX() throws ValueException {
         Assertions.assertEquals("MMXIX",App.getRoman(2019));
     }
+
+    @Test
+    public void checkExceptionNegative() {
+        Exception thrown = Assertions.assertThrows(ValueException.class, () -> {
+            App.getRoman(-3);
+        });
+
+        Assertions.assertEquals("Negative values cannot be allowed for conversion", thrown.getMessage());
+    }
+
+    @Test
+    public void checkExceptionLarger() {
+        Exception thrown = Assertions.assertThrows(ValueException.class, () -> {
+            App.getRoman(4000);
+        });
+
+        Assertions.assertEquals("Value is higher than allowed for conversion", thrown.getMessage());
+    }
+
 }
